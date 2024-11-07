@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/icons8-male-user.gif">
+    <title>Fozan Ahmed</title>
+    <style>
+        /* default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* background overall styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            background: url('./assets/pexels-lachlan-ross-5967787.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            backdrop-filter: blur(8px);
+            color: #fff;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1em;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5em 1em;
+            transition: background 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* main section style */
+        .main-content {
+            text-align: center;
+            padding: 2em;
+            display: none;
+            flex: 1;
+        }
+
+        /* Content wrapper */
+        .content-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            padding-bottom: 2em;
+        }
+
+        /* Typing animation */
+        .typing-text {
+            font-size: 2em;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid #fff;
+            margin: 0 auto;
+            max-width: fit-content;
+            animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .typing-text {
+                font-size: 1.5em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .typing-text {
+                font-size: 1.2em;
+            }
+        }
+        /* Footer */
+        footer {
+            padding: 1em;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* Toggle sections */
+        .section-content {
+            display: none;
+            padding: 2em;
+            text-align: center;
+            animation: fadeIn 0.5s;
+            flex: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Music controls */
+        .music-control {
+            position: fixed;
+            bottom: 70px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .music-control button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .volume-slider {
+            width: 100px;
+            margin: 0 10px;
+        }
+
+        .pdf-container {
+            max-height: calc(100vh - 200px);
+            margin-bottom: 2em;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <a href="#" onclick="showHome()">Home</a>
+        <a href="#" onclick="showSection('cv')">CV</a>
+        <a href="#" onclick="showSection('projects')">Projects</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </div>
+
+    
+    <div class="content-wrapper">
+        
+        <div id="home" class="main-content" style="display: block;">
+            <h1 style="font-size: clamp(2em, 5vw, 3em);">
+                اسلام عليكم</h1>
+                <h4 style="font-size: clamp(0.8em, 2vw, 1em); margin-bottom: 20px;">Peace be upon you!</h4>
+            <div class="profile-photo-container d-flex justify-content-center mb-4">
+                <img src="./assets/344738512_1371678653377332_4720612348796037888_n.jpg" class="rounded-circle img-fluid" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%;" alt="Fozan Ahmed">
+            </div>            
+            <div class="typing-text" style="margin-top: 20px; font-size: clamp(1em, 3vw, 1.5em);"> I'm Fozan Ahmed Full-Stack Developer </div>
+
+            <p style="color: white; font-size: clamp(0.9em, 2vw, 1.2em); line-height: 1.6; margin: 20px auto; max-width: min(90%, 800px); padding: 0 15px; text-align: center; word-spacing: normal; hyphens: auto;">
+                "I'm Fozan Ahmed, a passionate full-stack developer with a flair for turning ideas into responsive, dynamic websites and apps. With a foundation in HTML, CSS, JavaScript, React, and Bootstrap for front-end development, I love building sleek, user-friendly interfaces. But that's just the start – I'm also skilled in Python for creating back-end applications and logic, which means I can bring full functionality to my projects, whether it's a simple website or a complex web application. When I'm not coding, you might find me intrested in Writing, Poetry, Music, Psychology & Philosophy, I like 'exploring new things' and 'working on side projects'. Let's make something amazing together!"
+            </p>            <div class="social-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(10px, 2vw, 20px); margin: 20px auto; max-width: 600px; padding: 0 15px;">
+                            <a href="https://www.facebook.com/felixaarash" target="_blank" rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.1); padding: clamp(8px, 1.5vw, 15px); border-radius: 10px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: white; transition: transform 0.3s ease, background 0.3s ease;">
+                                <i class="fab fa-facebook" style="font-size: clamp(1.2em, 2vw, 1.5em);"></i>
+                                <span style="font-size: clamp(0.8em, 1.5vw, 1em);">Facebook</span>
+                            </a>
+                            <a href="https://x.com/felixarash" target="_blank" rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.1); padding: clamp(8px, 1.5vw, 15px); border-radius: 10px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: white; transition: transform 0.3s ease, background 0.3s ease;">
+                                <i class="fab fa-x-twitter" style="font-size: clamp(1.2em, 2vw, 1.5em);"></i>
+                                <span style="font-size: clamp(0.8em, 1.5vw, 1em);">X</span>
+                            </a>
+                            <a href="https://www.youtube.com/@felixarash" target="_blank" rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.1); padding: clamp(8px, 1.5vw, 15px); border-radius: 10px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: white; transition: transform 0.3s ease, background 0.3s ease;">
+                                <i class="fab fa-youtube" style="font-size: clamp(1.2em, 2vw, 1.5em);"></i>
+                                <span style="font-size: clamp(0.8em, 1.5vw, 1em);">YouTube</span>
+                            </a>
+                            <a href="https://www.instagram.com/foxaleo/" target="_blank" rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.1); padding: clamp(8px, 1.5vw, 15px); border-radius: 10px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: white; transition: transform 0.3s ease, background 0.3s ease;">
+                                <i class="fab fa-instagram" style="font-size: clamp(1.2em, 2vw, 1.5em);"></i>
+                                <span style="font-size: clamp(0.8em, 1.5vw, 1em);">Instagram</span>
+                            </a>
+                            <a href="https://www.quora.com/profile/Fozan-Ahmed-11" target="_blank" rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.1); padding: clamp(8px, 1.5vw, 15px); border-radius: 10px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: white; transition: transform 0.3s ease, background 0.3s ease;">
+                                <i class="fab fa-quora" style="font-size: clamp(1.2em, 2vw, 1.5em);"></i>
+                                <span style="font-size: clamp(0.8em, 1.5vw, 1em);">Quora</span>
+                            </a>
+                            <a href="https://github.com/felixarash" target="_blank" rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.1); padding: clamp(8px, 1.5vw, 15px); border-radius: 10px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: white; transition: transform 0.3s ease, background 0.3s ease;">
+                                <i class="fab fa-github" style="font-size: clamp(1.2em, 2vw, 1.5em);"></i>
+                                <span style="font-size: clamp(0.8em, 1.5vw, 1em);">GitHub</span>
+                            </a>
+                            <a href="https://www.upwork.com/freelancers/~018d70edf9f432ce1f?mp_source=share" target="_blank" rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.1); padding: clamp(8px, 1.5vw, 15px); border-radius: 10px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: white; transition: transform 0.3s ease, background 0.3s ease;">
+                                <i class="fab fa-upwork" style="font-size: clamp(1.2em, 2vw, 1.5em);"></i>
+                                <span style="font-size: clamp(0.8em, 1.5vw, 1em);">Upwork</span>
+                            </a>
+                        </div>
+                        <style>
+                            .social-links a:hover {
+                                transform: translateY(-3px);
+                                background: rgba(255, 255, 255, 0.2);
+                            }
+                            @media (max-width: 480px) {
+                                .social-links {
+                                    gap: 8px;
+                                }
+                                .social-links a {
+                                    padding: 6px 12px;
+                                }
+                            }
+                        </style>
+            
+        </div>       
+    </div>
+    
+            <div id="cv" class="section-content"> 
+            <h2 style="margin-bottom: 20px;">Curriculum Vitae</h2>
+
+            <div class="pdf-container" style="position: relative; width: 100%; height: 0; padding-bottom: 141.4%; overflow: hidden;">
+                <iframe 
+                    src="./assets/Fozan Ahmed Memon.pdf" 
+
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                    title="CV PDF Viewer"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="./assets/Fozan Ahmed Memon.pdf" download style="display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;">Download CV</a>
+            </div>
+        </div>
+        <div id="projects" class="section-content"> 
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've worked on!</p>
+            <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px;">
+                <div class="project-card" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; transition: transform 0.3s ease;">
+                    <img src="./assets/project1.png" alt="Project 1" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3>Personal Blog Website</h3>
+                        <p>This is my first persoanl blog website deploy when i learned the HTML, CSS and JavaScript</p>
+                        <a href="https://felixarash.netlify.app/" target="_blank" rel="noopener noreferrer" 
+                           style="display: inline-block; padding: 8px 16px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; transition: transform 0.3s ease;">
+                    <img src="./assets/project 2.png" alt="Project 2" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3>Another Porfolio Sample</h3>
+                        <p>This is my another porfolio website and it's development is still in progress</p>
+                        <a href="https://golden-gumption-24eacc.netlify.app/" target="_blank" rel="noopener noreferrer" 
+                           style="display: inline-block; padding: 8px 16px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; transition: transform 0.3s ease;">
+                    <img src="./assets/project 3.png" alt="Project 3" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3>Islamic Dawah Website</h3>
+                        <p>My another dream project, it's development is still in progress due to having a busy life working on other important purposes, i will complete these inshallah,</p>
+                        <a href="https://alummahspace.netlify.app/" target="_blank" rel="noopener noreferrer" 
+                           style="display: inline-block; padding: 8px 16px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="section-content"> 
+            <h2>Contact Me</h2>
+            <div class="contact-container" style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2rem 0;">
+                
+                <div class="contact-info" style="flex: 1; min-width: 300px; background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 10px;">
+                    <h3>Contact Information</h3>
+                    <div style="margin: 2rem 0;">
+                        <p>If you want hire me for your project, get helped and work with me contact here!</p>
+                        <p> </p>
+                        <p> </p>
+                        <p>📧 Email: <a href="mailto:fozanahmedmemon@gmail.com" style="color: white;">fozanahmedm9@gmail.com</a></p>
+                        <p>📱 Phone: <a href="tel:+923272064991" style="color: white;">+92 327 2064991</a></p>                    </div>
+                </div>
+
+                
+                <div class="feedback-form" style="flex: 1; min-width: 300px; background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 10px;">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required 
+                                style="padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; background: rgba(255, 255, 255, 0.1); color: white;">
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required 
+                                style="padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; background: rgba(255, 255, 255, 0.1); color: white;">
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                style="padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; background: rgba(255, 255, 255, 0.1); color: white; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" 
+                            style="padding: 0.8rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s ease;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("Mqgtok_AeZb0IwDPl"); 
+        })();
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            emailjs.send('service_9j7724i', 'template_dafxk5b', templateParams)
+                .then(function(response) {
+                    alert('Message sent successfully!');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    alert('Failed to send message. Please try again.');
+                });
+        });
+    </script>
+   
+    <div class="music-control">
+        <button onclick="togglePlay()" id="play-button">▶️</button>
+        <button onclick="toggleMute()" id="mute-button">🔊</button>
+        <input type="range" class="volume-slider" min="0" max="100" value="30" onchange="adjustVolume(this.value)">
+    </div>
+
+    
+    <footer>
+        © 2024 Fozan Ahmed Memon
+    </footer>
+
+    
+    <script>
+        
+        function showSection(sectionId) {
+            document.querySelectorAll('.main-content, .section-content').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        
+        function showHome() {
+            document.querySelectorAll('.main-content, .section-content').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('home').style.display = 'block';
+        }
+
+        
+        let audio = new Audio("./assets/antent - your eyes (sped up).mp3");
+        audio.volume = 0.3;
+        let isPlaying = false;
+
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                document.getElementById('play-button').textContent = '▶️';
+            } else {
+                audio.play();
+                document.getElementById('play-button').textContent = '⏸️';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function toggleMute() {
+            audio.muted = !audio.muted;
+            document.getElementById('mute-button').textContent = audio.muted ? '🔈' : '🔊';
+        }
+
+        function adjustVolume(value) {
+            audio.volume = value / 100;
+        }
+    </script>
+</body>
+</html>
